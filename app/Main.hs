@@ -3,8 +3,8 @@
 module Main where
 
 import Turtle
-import Text
+import Data.Text
 
 main = do
-  (status, output) <- shellStrict "brew list --versions" empty
+  (status, output) <- shellStrict "brew list --versions" Turtle.empty
   putStrLn $ show $ Prelude.map (splitOn " ") $ splitOn "\n" output
